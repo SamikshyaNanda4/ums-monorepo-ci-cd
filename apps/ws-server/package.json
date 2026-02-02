@@ -11,9 +11,13 @@
   "keywords": [],
   "author": "",
   "devDependencies": {
-    "@repo/typescript-config": "workspace:*",
-    "@repo/prisma": "workspace:*"
+    "@repo/prisma": "workspace:*",
+    "@repo/typescript-config": "workspace:*"
   },
   "license": "ISC",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "@types/ws": "^8.18.1",
+    "ws": "^8.19.0"
+  }
 }
