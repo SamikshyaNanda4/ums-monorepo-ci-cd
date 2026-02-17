@@ -1,0 +1,19 @@
+name: Deploy to Staging
+on:
+  push:
+    branches: -"main"
+
+jobs:
+  redeploy-web-http-ws:
+    name: Deploying everything to the staging cluster
+    steps:
+      - name: SSH into the server
+      - run: |
+          echo ${{secrets.SSH_PRIVATE_KEY}} &> ~/ssh_key
+          ssh -i ~/ssh_key root@43.205.209.147
+          cd ums-monorepo-ci-cd && git pull
+          pnpm install
+          pnpm run build
+          pm2 restart web
+          pm2 restart http-server
+          pm2 restart ws-server
