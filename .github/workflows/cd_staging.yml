@@ -5,10 +5,9 @@ on:
 
 jobs:
   redeploy-web-http-ws:
-    uses: ubuntu-latest
+    runs-on: ubuntu-latest
     name: Deploying everything to the staging cluster
     steps:
-      - name: SSH into the server
       - run: |
           echo ${{secrets.SSH_PRIVATE_KEY}} &> ~/ssh_key
           ssh -i ~/ssh_key root@43.205.209.147
