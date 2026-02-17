@@ -13,7 +13,7 @@ export default async function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <h1>User Management</h1>
+        <h1>User Management-UMS</h1>
 
         <UserForm />
 
