@@ -5,6 +5,7 @@ on:
 
 jobs:
   redeploy-web-http-ws:
+    uses: ubuntu-latest
     name: Deploying everything to the staging cluster
     steps:
       - name: SSH into the server
